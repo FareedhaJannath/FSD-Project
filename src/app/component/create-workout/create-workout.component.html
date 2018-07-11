@@ -1,0 +1,63 @@
+<div id="exercise-container" class="exercise-container">
+<form *ngIf="workout" class="row" [formGroup]="workoutForm"  novalidate>
+        <div id="exercise-data" class="col-sm-12 exercise-data">
+            <div class="form-group row col-sm-10">
+              <h3> {{this.formHeader}} </h3>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <label for="workoutTitle">Title:</label>
+                    <input type="text" name="workoutTitle" formControlName="workoutTitle" class="form-control workout-form" id="workoutTitle" placeholder="What would be the workout title?">
+                    <label *ngIf="workoutForm.controls.workoutTitle.hasError('required') && (workoutForm.controls.workoutTitle.touched || submitted)" class="field-validation-error validation-message">Title is required</label>
+                </div>
+              </div>
+              <div class="form-group row">
+                 <div class="col-sm-10">
+                    <label for="workoutNote">Note:</label>
+                    <textarea formControlName="workoutNote" class="form-control workout-form" id="workoutNote" placeholder="Enter workout Note."></textarea>
+                    <label *ngIf="workoutForm.controls.workoutNote.hasError('required') && (workoutForm.controls.workoutNote.touched || submitted)"
+                        class="field-validation-error validation-message">Description is required</label>
+                  </div>
+              </div>
+               <div class="form-group row" *ngIf=(!edited)>
+                      <div class="col-sm-10">
+                         <label for="caloriesBurnt">Calories Burnt Per Min:</label>
+                          <input type="number" name="caloriesBurnt" formControlName="caloriesBurnt" class="form-control workout-form" id="caloriesBurnt" placeholder="Enter Calories Burnt" value="0.0" step="0.1" min="0.0">
+                          <label *ngIf="workoutForm.controls.caloriesBurnt.hasError('required') && (workoutForm.controls.caloriesBurnt.touched || submitted)"
+                              class="field-validation-error validation-message">Calories is required</label>
+                      </div>
+                      <div class="col-sm-2">
+                        <button type="button" class="btnwhite" (click)="decrementCalories()"><i class="fa fa-minus-square workout-icon" title="Decrease Calories"></i></button>
+                        <button type="button" class="btnwhite" (click)="incrementCalories()"><i class="fa fa-plus-square workout-icon" title="Increase Calories"></i></button>
+                      </div>
+              </div>
+              <div class="form-group row">
+                 <div class="col-sm-10">
+                  <label for="categoryId">Category:</label>
+                   <select class="form-control" formControlName="categoryId" id="categoryId" [(ngModel)] = "category">
+                      <option value="" selected>Select Category</option>
+                      <option *ngFor="let category of categories" [ngValue]="category.categoryId">{{category.categoryTitle}}</option>
+                    </select>
+                     <label *ngIf="workoutForm.controls.categoryId.hasError('required') && (workoutForm.controls.categoryId.touched || submitted)"
+                      class="field-validation-error validation-message">Category is required</label>
+                 </div>
+                 <div class="col-sm-2">
+                   <button type="button" class="btnwhite" (click)="addCategory()"><i class="fa fa-plus-square workout-icon" title="Add Category"></i></button>
+                </div>
+              </div>
+              <div *ngIf="(!edited)"class="form-group row col-sm-5">
+                  <button  class="form-control btn btn-primary" value="Add Workout" (click)="saveWorkout(workoutForm.value,workoutForm.valid)">
+                      <i class="fa fa-plus-square"></i> Add Workout
+                </button>
+              </div>
+             <div *ngIf="(edited)"class="form-group row col-sm-5">
+                  <button  class="form-control btn btn-primary" value="Update" (click)="updateWorkout(workoutForm.value,workoutForm.valid,editedId)">
+                      <i class="fa fa-plus-square"></i> Update
+                </button>
+                <button  class="form-control btn btn-danger" value="Cancel" [routerLink]="['/workout']">
+                      <i class="fa fa-close"></i> Cancel 
+                </button>
+              </div>
+        </div>
+</form>
+</div>

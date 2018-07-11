@@ -1,0 +1,55 @@
+<div id="exercise-container" class="exercise-container">
+<form  class="row" [formGroup]="categoryForm" (ngSubmit)="onSubmit(categoryForm)" novalidate>
+        <div id="category-data" class="col-sm-12 exercise-data">
+            <div class="form-group row">
+              <h3> Add Category </h3>
+            </div>
+             <div class="form-group row">
+
+              <div class="col-xs-10">
+               <label for="category-search">Search:</label>
+                  <input #searchText type="text" [(ngModel)]="queryStr" name="category-search" formControlName="searchCategory" 
+                  class="form-control green" 
+                  id="category-search" placeholder="&#xf002; Search Category">
+
+            </div>
+            </div>
+            <div class="form-group row">
+
+               <div class="col-xs-10"><input #title type="text" name="title" formControlName="title" 
+                  class="form-control green workout-form" 
+                  id="category-title" placeholder="What would be the Excersice Category ?">
+                  <label *ngIf="categoryForm.controls.title.hasError('required') 
+                  && (categoryForm.controls.title.touched || submitted)" 
+                  class="field-validation-error validation-message">Category is required</label>
+                  
+                  </div>
+              <div class="col-xs-2"><button class="btnwhite" (click)="onAddClick(title.value)"> 
+                    <i class="col-xs-2 fa fa-plus-square add-icon" title="Add Category" aria-hidden="true"></i> </button></div>           
+              </div>
+              <div class="form-group row" *ngFor="let category of categoryList | filter: queryStr; let i = index">
+
+                 <div class="col-xs-10"> 
+                   <div *ngIf="!category.editable">
+                             {{category.categoryTitle}}
+                     </div>
+                     <div *ngIf="category.editable">
+                       <input type="text" class="form-control workout-form" formControlName="title"  [(ngModel)]="category.categoryTitle" [attr.disabled]="category.ediable?'':null"/>
+                     </div>
+                    </div>
+                  <div class="col-xs-2"> 
+                    
+                    <button class="btnwhite" *ngIf="!category.editable" (click)="category.editable=true;"> 
+                        <i class="fa fa-pencil-square-o add-icon" title="Edit Category" aria-hidden="true"></i> 
+                        </button>
+                         <button class="btnwhite" *ngIf="category.editable" (click)="editCategory(category);category.editable=false;"> 
+                           <i class=" fa fa-floppy-o add-icon" title="Update Category" aria-hidden="true"></i> 
+                        </button>
+                        <button class="btnwhite" (click)="deleteCategory(category)"> 
+                         <i class="fa fa-trash-o add-icon" title="Delete Category"  aria-hidden="true"></i> 
+                        </button>
+                     </div>    
+              </div>
+        </div>
+</form>
+</div>
