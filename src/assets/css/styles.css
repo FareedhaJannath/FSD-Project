@@ -1,0 +1,336 @@
+/* You can add global styles to this file, and also import other style files */
+/* app css stylesheet */
+
+html{
+    height:100%;
+}
+
+body {
+    padding: 0;
+    min-height: 100%;
+    font-size: 13px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    /*color:#f5eeee !important;*/
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers - start*/
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/* styles for validation helpers - end */
+
+/*styles for top nav bar - start*/
+.navbar-default.top-navbar {
+    background-color: #4eaded;
+    border-color: #4eaded;
+}
+.second-top-nav{
+    background-color: #0088dc !important;
+    color: white;
+    height:43px;
+    position:fixed !important;
+    top:70px !important;
+}
+.second-top-nav div{
+    position:fixed;
+    top:81px;
+}
+    .navbar-default .second-top-nav a {
+        color: white !important;
+    }
+
+.navbar-default.top-navbar h1 {
+    color: antiquewhite;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*styles for top nav bar - end*/
+
+/*styles for left nav bar - start*/
+.left-nav-bar {
+    background-color: #1ba2db;
+    min-height: 100%;
+    position: fixed;
+    margin-top: -14px;
+    margin-left:-15px;
+    left:0px;
+    width:325px;
+}
+
+.left-nav-bar div{
+    position:fixed;
+    top:123px;
+    padding-left:5px;
+    font-size:14px;
+ }
+
+.left-nav-bar h3{
+    padding-top:20px;
+    top:123px;
+    text-align:center
+}
+.left-nav-bar a{
+    background-color:#995466;
+    color:white;
+    text-align:center;
+    width:300px;
+}
+
+.left-nav-bar a:hover{
+    background-color:#1D89CF;
+    color:white;
+    text-align:center;
+    width:300px;
+}
+
+.left-nav-bar a:active{
+    background-color:#1D89CF;
+    color:white;
+    text-align:center;
+    width:300px;
+}
+
+/*styles for left nav bar - end*/
+
+/*styles for left nav exercises bar - start*/
+.left-nav-exercises-bar {
+    background-color: #1ba2db;
+    min-height: 100%;
+    max-height: 100%;
+    position: fixed;
+    margin-top: -14px;
+    margin-left:-15px;
+    left:0px;
+    width:325px;
+    overflow-y: auto;
+}
+
+.left-nav-exercises-bar div{
+    top:123px;
+    padding-left:5px
+}
+
+.left-nav-exercises-bar button{
+    background-color:#995466;
+    color:white;
+    text-align:center;
+    width:300px;
+}
+
+.left-nav-exercises-bar h3{
+    padding-top:20px;
+    top:123px;
+    text-align:center
+}
+.left-nav-exercises-bar a{
+    background-color:#995466;
+    color:white;
+    text-align:center;
+    width:180px;
+}
+/*styles for left nav bar - end*/
+
+/*styles for container - start*/
+.container.app-container{
+    width:100%;
+    max-width:100%;
+    border: solid 1px;
+}
+.workout-display-div {
+    text-align: center;
+    padding: 40px;
+}
+.workout-display-div .img-responsive{
+    margin: 25px auto;
+    width:540px;
+    height:360px;
+    cursor:pointer;
+}
+.workout-display-div .time-progress{
+    margin-top:40px;
+}
+/*styles for container - end*/
+
+/*Styles for start page - start*/
+.text-center{
+    color:#4eaded;
+}
+
+.action{
+    text-align:center;
+    margin-top:25px;
+}
+.action a {
+    text-decoration: none;
+    font-size: 54px;
+    color:#4eaded;
+}
+.action a:hover{
+    color:#005E9E;
+}
+.action a .glyphicon {
+    top:8px;
+}
+
+.form-control.green {
+    font-family: FontAwesome;
+    color: purple;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 12px;
+}
+
+.wrapper{ 
+    padding: 10px;
+    padding-left:85px;
+    border: 1px solid #CCC;
+    width: 60%;
+    margin: 0 auto;
+    /*background: linear-gradient(to right, #666633 0%, #ffffff 81%);*/
+    }
+
+   .h1, h1 {
+    font-size: 30px;
+    text-shadow: 0 2px white, 0 3px #777;
+    color: black;
+    padding-bottom: 20px;
+    /* text-align: center; */
+    }
+
+    .h3, h3 {
+        font-size: 20px;
+        font-stretch: semi-condensed;
+        font-family: cursive;
+    }   
+   .btn.btn-success {
+        color: #fff;
+        background-color: #1ee448;
+        border-color: #4cae4c;
+    }
+
+    .btn.btn-danger {
+        color: #fff;
+        background-color: #90403e;
+        border-color: #3e1514;
+    }
+
+    .btn.btn-primary {
+        color: #fff;
+        background-color: #ffa100;
+        border-color: #bb7a0c;
+    }
+
+     .btn.btn-primary {
+        color: #fff;
+        background-color: #ffa100;
+        border-color: #bb7a0c;
+    }
+
+    .btn.btn-primary:hover,.btn.btn-primary:active{
+         color: #fff;
+        background-color: saddlebrown;
+        border-color: #bb7a0c;
+    }
+
+@media screen and (max-width:960px){
+    
+    .wrapper{ width: 100%;} 
+    
+
+    
+    }
+
+.modal {
+	display: block !important;
+	min-width: 200px;
+    min-height: 200px;
+	max-height: 90%;
+}
+
+
+    .form-control,input{max-width:100% !important;}
+    .top-navbar {background: none !important; border:none !important;}
+    .top-navbar a{width:21%;margin-right: 1%;}
+    .workout-form{ width:70%; float:left; margin-right: 10px;}
+    .add-icon{width:30px; font-family: FontAwesome;font-size: 2.5em; color:darkgoldenrod;
+    }
+     
+
+    .workout-icon{
+        background-color: honeydew;
+        border: none;
+        color:darkgoldenrod;
+        padding-top: 25px;
+        font-size: 20px;
+        cursor: pointer;
+        width: 28px;
+        font-family: FontAwesome;
+    }
+    .btnwhite{
+        background-color: honeydew;
+        border: none;
+        color: white;
+        padding: 2px 2px;
+        font-size: 25px;
+        cursor: pointer;
+        width: 28px;
+        float: left;
+    }
+
+    .form-control.btn{
+            width: 120px;
+            margin-right: 1%;
+      }
+
+    .btnwhite:click{
+        border:none;
+    }
+
+    table.table-bordered{
+        border:1px solid blue;
+        margin-top:20px;
+    }
+    table.table-bordered > thead > tr > th{
+        border:1px solid blue;
+    }
+    table.table-bordered > tbody > tr {
+        border:1px solid blue;
+    }
+
+    .btn{
+            width: 22%;
+            margin-right: 1%;
+    }
+
+    .bottom-pad{
+            padding-bottom: 10px;
+    }
+
